@@ -59,6 +59,10 @@ ul {
     position: relative;
     color: #FFFFFF;
     text-decoration: none;
+    padding: 4px;
+}
+.nav-element:hover {
+    color: red;
 }
 .search-box {
     height: 32px;
@@ -112,8 +116,7 @@ ul {
     bottom: 8px; 
 }
 .prev:hover, .next:hover {
-    background-color: #AAAAAA;
-    color: #111111;
+    color: red;
 }
 .footer-row-2 {
     color: #FFFFFF;
