@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="MIT_Logo.png">
+        <title>Home - Massachusetts Institute of Technology</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/925123d209.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- To Dim The Background Image -->
+        <div class="bg">
+
+        </div>
+        <!-- Navigation Bar -->
+        <div class="header flex">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img class="logo" src="MIT_Logo_2.png" alt="MIT Logo">
+                </a>
+            </div>
+            <!-- Navigation Bar Elements -->
+            <div class="nav-bar flex">
+                <ul class="flex">
+                    <li>
+                        <a href="index.html" class="nav-element">Home</a>
+                    </li>
+                    <li>
+                        <a href="institute.html" class="nav-element">Institute</a>
+                    </li>
+                    <li>
+                        <a href="academics.html" class="nav-element">Academics</a>
+                    </li>
+                    <li>
+                        <a href="resources.html" class="nav-element">Resources</a>
+                    </li>
+                    <li>
+                        <a href="students.html" class="nav-element">Students</a>
+                    </li>
+                    <li>
+                        <a href="updates.html" class="nav-element">Updates</a>
+                    </li>
+                </ul>
+                <input class="search-box" type="text" placeholder="Search">
+            </div>
+        </div>
+        <!-- (Center) Information -->
+        <div class="information-container">
+            <h1 class="info-row-1 text-center">Hello.</h1>
+            <p class="info-row-2 text-center">
+                The MIT community is driven by a shared purpose: to make a better world through education, research, and innovation. We are fun and quirky, elite but not elitist, inventive and artistic, obsessed with numbers, and welcoming to talented people regardless of where they come from.
+            </p>
+        </div>
+        <div class="footer">
+            <p class="footer-row-1 text-center">Latest Updates</p>
+            <!-- Updates -->
+            <div class="updates-container flex">
+                <div class="prev">
+                    <a onClick="plusUpdates(-1)">&#10094;</a>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">Information for New BTech / BDes Students (Oct 2022)</p>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">Popular stories this year covered the detection of radio signals from space, a new battery design, immigrants’ entrepreneurial activity, and more.</p>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">MIT community members lent their voices to news articles read globally, and described their work to make a better world.</p>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">Across the Institute, MIT’s communities took part in light-hearted traditions new and old.</p>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">MIT alumnus-founded PoolText offers a platform for researchers and journal editors to improve the efficiency of submitting and publishing scientific papers.</p>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">Sally Kornbluth, the 18th president of MIT, speaks with Boston Magazine reporter Jonathan Soroff about why she is excited to lead MIT, Smoots, Boston weather and sports, and how to encourage more girls and women to pursue STEM careers.</p>
+                </div>
+                <div class="updates text-center">
+                    <p class="footer-row-2">A study by Prof. Amy Finkelstein finds that physicians and their families are less likely to comply with medication guidelines, reports Dennis Thompson for HealthDay. The researchers found that “people tend to adhere to medication guidelines about 54% of the time, while doctors and their families lag about 4 percentage points behind that.”</p>
+                </div>
+                <div class="next">
+                    <a onClick="plusUpdates(1)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+        <!-- JavaScript Code -->
+        <script>
+            let updateIndex = 1;
+            showUpdates(updateIndex);
+
+            function plusUpdates(n) {
+                showUpdates(updateIndex += n);
+            }
+            function currentUpdate(n) {
+                showUpdates(updateIndex = n);
+            }
+            function showUpdates(n) {
+                let updatesVar = document.getElementsByClassName("updates");
+                let gesturesVar = document.getElementsByClassName("gestures");
+                if(n > updatesVar.length) {
+                    updateIndex = 1;
+                }
+                if(n < 1) {
+                    updateIndex = updatesVar.length;
+                }
+                for(let i = 0; i < updatesVar.length; i++) {
+                    updatesVar[i].style.display = "none";
+                }
+                for(let i = 0; i < gesturesVar.length; i++) {
+                    gesturesVar[i].className = gesturesVar[i].className.replace("active", "");
+                }
+                updatesVar[updateIndex - 1].style.display = "block";
+                gesturesVar[updateIndex - 1].className += "active";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* Global */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+}
+body {
+    overflow: hidden;
+    background-image: url(mit.jpeg);
+    background-size: 100vw 100vh;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.text-center {
+    text-align: center;
+}
+
+/* Background Image Opacity */
+.bg {
+    background:rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+/* Header (Nav Bar) */
+.header {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+.logo-container {
+    position: relative;
+    left: 32px;
+    width: 25%;
+}
+.logo {
+    width: 152px;
+    height: 88px;
+}
+.nav-bar {
+    width: 75%;
+    justify-content: end;
+}
+ul {
+    list-style: none;
+    flex-direction: row;
+    gap: 16px;
+}
+.nav-element {
+    position: relative;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.search-box {
+    height: 32px;
+    width: 369px;
+    border: 0.5px solid black;
+    border-radius: 12px;
+    padding-left: 6px;
+    margin: 0px 32px;
+}
+
+/* Information */
+.information-container {
+    position: absolute;
+    z-index: 2;
+    top: calc(50vh - (48px - 8px) - 24px);
+}
+.info-row-1 {
+    font-size: 48px;
+    margin-bottom: 4px;
+    color: #FFFFFF;
+}
+.info-row-2 {
+    color: #CCCCCC;
+    margin: 0px 96px;
+    line-height: 24px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 8px;
+    z-index: 2;
+    width: 100vw;
+}
+.footer-row-1 {
+    color: #AAAAAA;
+}
+.updates-container {
+    position: relative;
+    left: calc(25vw - 32px);
+    width: calc(75vw + 64px);
+    right: calc(25vw - 32px);
+    gap: 16px;
+    align-items: flex-end;
+}
+.prev, .next {
+    position: relative;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 24px;
+    bottom: 8px; 
+}
+.prev:hover, .next:hover {
+    background-color: #AAAAAA;
+    color: #111111;
+}
+.footer-row-2 {
+    color: #FFFFFF;
+    width: 50vw;
+}
